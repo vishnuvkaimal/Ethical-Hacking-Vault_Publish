@@ -1,0 +1,9 @@
+site_name: Ethical Hacking Notes by Vishnu Vijai
+site_description: Free public ethical hacking knowledge base
+site_author: Vishnu Vijai
+
+theme:
+  name: material
+
+plugins:
+  - search
