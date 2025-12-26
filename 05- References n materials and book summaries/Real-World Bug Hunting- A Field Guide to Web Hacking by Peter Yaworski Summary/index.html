@@ -1,0 +1,1480 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free public ethical hacking knowledge base">
+      
+      
+        <meta name="author" content="Vishnu Vijai">
+      
+      
+      
+        <link rel="prev" href="../../02-%20Domains%20and%20Roadmap%20-%20hacking%20theoretical%20basics/Roadmap/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Real World Bug Hunting A Field Guide to Web Hacking by Peter Yaworski Summary - Ethical Hacking Notes by Vishnu Vijai</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#executive-summary-what-the-book-is-and-how-to-use-this-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ethical Hacking Notes by Vishnu Vijai" class="md-header__button md-logo" aria-label="Ethical Hacking Notes by Vishnu Vijai" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ethical Hacking Notes by Vishnu Vijai
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Real World Bug Hunting  A Field Guide to Web Hacking by Peter Yaworski Summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ethical Hacking Notes by Vishnu Vijai" class="md-nav__button md-logo" aria-label="Ethical Hacking Notes by Vishnu Vijai" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ethical Hacking Notes by Vishnu Vijai
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00  Readme and orientation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    00  Readme and orientation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%20Readme%20and%20orientation/Self%20Note%20and%20tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self Note and tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01  Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01  Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%20Foundations/Ethical%20Hacking%20%26%20Cybersecurity%20%E2%80%93%20Standard%20Frameworks%20%26%20Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking & Cybersecurity – Standard Frameworks & Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%20Foundations/Ethical%20Hacking%20Job%20Roles%20and%20Career%20Paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking Job Roles and Career Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%20Foundations/Ethical%20Hacking%20tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%20Foundations/Introduction%20to%20Ethical%20Hacking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Ethical Hacking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02  Domains and Roadmap   hacking theoretical basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02  Domains and Roadmap   hacking theoretical basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%20Domains%20and%20Roadmap%20-%20hacking%20theoretical%20basics/Roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05  References n materials and book summaries
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05  References n materials and book summaries
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Real World Bug Hunting  A Field Guide to Web Hacking by Peter Yaworski Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<blockquote>
+<p>Note: This summary is compiled and edited by AI, using the real Book PDF. In case of any changes or additions, will correct as per notice</p>
+</blockquote>
+<h1 id="executive-summary-what-the-book-is-and-how-to-use-this-summary">Executive summary (what the book is and how to use this summary)</h1>
+<ul>
+<li>
+<p><strong>Scope of the book:</strong> Practical field guide to common web vulnerabilities, organized by vulnerability class. Each chapter introduces a class, explains mechanics, shows several <em>real bounty reports/case studies</em> and ends with actionable “takeaways” (how to test, why it was possible, and how to fix). The book is practical for both beginners and intermediate bug hunters.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Structure of this summary:</strong> chapter → short definition → how it works → concrete examples from the book (with report identifiers / dates / bounties where present) → practical PoC / exploitation patterns you can try during testing → detection &amp; remediation notes → author’s takeaways.</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-1-bug-bounty-basics">Chapter 1 — Bug Bounty Basics</h1>
+<p><strong>What it covers:</strong> fundamental web concepts (client/server model, DNS, TCP, HTTP requests/responses, headers, HTTP methods, statelessness), and bug bounty program basics: what a vulnerability is, what a bounty is, how to approach responsible disclosure. The author also outlines common reconnaissance techniques and tools referenced later.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Key testing tips / takeaways</strong></p>
+<ul>
+<li>
+<p>Monitor HTTP traffic with a proxy (Burp/ZAP) and learn how browsers render responses — many bugs become visible in the parameters/headers.</p>
+</li>
+<li>
+<p>Understand the meaning of standard HTTP codes (301/302/303/307/308) because many redirect-related vulnerabilities rely on how Location headers are handled.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-2-open-redirect">Chapter 2 — Open Redirect</h1>
+<p><strong>Definition:</strong> a site accepts attacker-controlled input as a redirect target and sends victims to attacker sites, abusing the victim site’s trust. Often low impact but useful for phishing/OAuth token exfiltration.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>How it works (mechanics):</strong></p>
+<ul>
+<li>
+<p>The server returns a Location header (or uses <code>&lt;meta http-equiv="refresh"&gt;</code> or <code>window.location</code>) whose value is attacker controlled.</p>
+</li>
+<li>
+<p>Common parameter names: <code>redirect</code>, <code>redirect_to</code>, <code>next</code>, <code>url</code>, <code>u</code>, <code>r</code>, <code>checkout_url</code>, <code>domain_name</code> etc.</p>
+</li>
+<li>
+<p>Special URL characters (e.g., <code>.</code> or <code>@</code>) or subdomain concatenation tricks (<code>mystore.myshopify.com.&lt;attacker&gt;.com</code>) can be abused when the site blindly concatenates values.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Concrete book examples</strong></p>
+<ul>
+<li>
+<p><strong>Shopify Theme Install Open Redirect</strong> — <code>domain_name</code> parameter allowed off-site redirects; bounty $500. (HackerOne report referenced.)</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Shopify Login Open Redirect</strong> — <code>checkout_url</code> parameter combined with store URL; attackers used characters to change meaning so DNS resolves to attacker domain; bounty $500.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>HackerOne interstitial redirect (Zendesk integration)</strong> — missing interstitial allowed JavaScript redirect to run and move users to an attacker site; shows chained-service attack (HackerOne → Zendesk).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>How to test (PoC-style):</strong></p>
+<ol>
+<li>
+<p>Look for redirect-style parameters in URLs (<code>?next=</code>, <code>?checkout_url=</code>, <code>?return_to=</code>).</p>
+</li>
+<li>
+<p>Replace parameter with attacker URL — check behavior (Location header, meta refresh or JS redirect).</p>
+</li>
+<li>
+<p>Try URL-trick characters (prepend <code>.</code> or <code>@</code>, add subdomain fragments) to see whether the final resolved host becomes attacker-controlled.</p>
+</li>
+<li>
+<p>If the app uses third-party services (Zendesk, SSO), inspect interstitial pages for missing checks or injected params.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Detection / Fixes:</strong></p>
+<ul>
+<li>
+<p>Fix: Whitelist allowed redirect hosts; require relative paths only; or canonicalize+validate hostname before redirect.</p>
+</li>
+<li>
+<p>Add interstitials when linking to third-party content; require user confirmation for cross-site redirects.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Takeaway:</strong> Open redirects are often low severity, but excellent for learning redirect mechanics and for chaining with other bugs (phishing, OAuth token theft).</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-3-http-parameter-pollution-hpp">Chapter 3 — HTTP Parameter Pollution (HPP)</h1>
+<p><strong>Definition:</strong> attackers send duplicate parameters or specially encoded values to change how parameters are interpreted, causing the server or downstream service (or client) to use attacker-controlled values. HPP can be <strong>server-side</strong> or <strong>client-side</strong> depending on where parameter parsing differs.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>
+<p>Many languages/frameworks parse duplicate keys differently (first wins, last wins, arrays, etc.). If backend signature or validation uses one occurrence and the action uses another, you can bypass checks.</p>
+</li>
+<li>
+<p>Client-side HPP: URIs rendered into client JS/widgets or social share links can be tampered with so the generated third-party link points elsewhere.</p>
+</li>
+</ul>
+<p><strong>Book case studies</strong></p>
+<ul>
+<li>
+<p><strong>HackerOne social sharing buttons</strong> — appending <code>&amp;u=</code> or additional <code>text=</code> parameters caused shared posts to link to attacker URLs. Bounty: $500.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Twitter unsubscribe HPP</strong> — attacker added a second <code>uid</code> parameter so the signature validated with one <code>uid</code> but action executed under the second <code>uid</code>, enabling unsubscribing other users; bounty $700. This is a classic “signature bound to first parameter, action uses last parameter” mismatch.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Twitter Web Intents</strong> — parameter tampering to change the content or link of tweets created via web intents.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>PoC / exploitation patterns:</strong></p>
+<ol>
+<li>
+<p>Identify parameters that look like user IDs, signatures, or state tokens (<code>uid</code>, <code>id</code>, <code>sig</code>, <code>token</code>).</p>
+</li>
+<li>
+<p>Try appending a second parameter with the same name and a different value: <code>...?uid=ATTACKER&amp;uid=VICTIM&amp;sig=...</code> and observe which value the server uses for verification vs for action.</p>
+</li>
+<li>
+<p>Encode <code>&amp;</code> as <code>%26</code> (or similarly encode) to smuggle parameters into values that later decode into additional parameters client-side.</p>
+</li>
+<li>
+<p>For social widgets, append <code>&amp;u=</code> or <code>&amp;text=</code> and inspect generated third-party links.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Detection / Fixes:</strong></p>
+<ul>
+<li>
+<p>Normalize parameter handling (reject duplicates, canonicalize to a single format).</p>
+</li>
+<li>
+<p>Bind signatures to the <em>exact canonicalized representation</em> of inputs and use both validation and action on the same canonical values.</p>
+</li>
+<li>
+<p>For third-party link generation, escape and validate user-built components.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Takeaway:</strong> Persistence pays — HPP often requires trying duplicate parameters, encodings, and understanding how different layers parse parameters.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-4-cross-site-request-forgery-csrf">Chapter 4 — Cross-Site Request Forgery (CSRF)</h1>
+<p><strong>Definition:</strong> an attacker tricks an authenticated user’s browser into making an unwanted request to a trusted site (exploiting the browser’s automatic credential sending like cookies). CSRF can change state (POST) or perform actions via GET if poorly designed.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Mechanics &amp; defenses explained:</strong></p>
+<ul>
+<li>
+<p>CSRF with GET: unsafe apps expose state-changing GET endpoints — attacker can embed images/links to trigger them.</p>
+</li>
+<li>
+<p>CSRF with POST: attacker can auto-submit forms or use XHR from attacker site in some conditions (but SOP limits cross-origin XHR unless CORS allows it).</p>
+</li>
+<li>
+<p>Defenses: CSRF tokens (synchronizer tokens), SameSite cookies, require double-submit cookies, validate Origin/Referer headers, ensure state changes are not via GET.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Examples in the book</strong></p>
+<ul>
+<li>
+<p><strong>Shopify Twitter disconnect</strong> — CSRF used to disconnect social account association; demonstrates OAuth / third-party integrations being affected.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Instacart zone changes / account modification</strong> — CSRF leading to state change examples.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Badoo full account takeover</strong> — a real high-impact example combining CSRF and other flows causing full takeover.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing approach:</strong></p>
+<ol>
+<li>
+<p>Look for state-changing endpoints accessible from an authenticated browser.</p>
+</li>
+<li>
+<p>Attempt to trigger via <code>&lt;img src&gt;</code>, <code>&lt;form action&gt;</code> on attacker page, and see if request succeeds for signed-in user.</p>
+</li>
+<li>
+<p>Check for CSRF token presence, verify token uniqueness per session and binding to user session.</p>
+</li>
+<li>
+<p>Test Referer/Origin header checks — some sites only require Referer origin verification.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Mitigations:</strong> Use per-request cryptographically secure CSRF tokens, enforce SameSite/Lax cookies for session cookies, and avoid state changes via GET.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-5-html-injection-and-content-spoofing">Chapter 5 — HTML Injection and Content Spoofing</h1>
+<p><strong>Definition:</strong> injection of HTML content into pages where untrusted input is rendered as HTML (not escaped). This differs from XSS in that HTML injection may not allow script execution (depending on context) but can spoof content, create fake UI, or inject tags like <code>&lt;meta&gt;</code>/<code>&lt;img&gt;</code> to phish data.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples from the book</strong></p>
+<ul>
+<li>
+<p><strong>Coinbase comment injection via encoding</strong> — attacker used character encoding to inject HTML-like content into comments producing spoofed UI.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>HackerOne unintended HTML inclusion</strong> — certain pages included HTML fragments unintentionally, enabling content spoofing; followed by a fix bypass example illustrating real-world nuance.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Within Security content spoof</strong> — an example of content rendered from untrusted sources causing misleading displays.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing patterns:</strong></p>
+<ul>
+<li>
+<p>Try various encodings (UTF-7, alternate encoding, HTML entities) to see if content is interpreted as HTML.</p>
+</li>
+<li>
+<p>Look for contexts where user input is injected into page markup (e.g., comments, blog posts, profile fields) and test rendering in different browsers.</p>
+</li>
+<li>
+<p>If scripts are blocked but HTML accepted, attempt UI-based phishing (fake forms/links) or content placement to mislead admins/users.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Fixes:</strong> Properly escape or sanitize HTML input, use content security policy (CSP) to limit script execution, and treat user-provided markup as data, not executable markup.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-6-carriage-return-line-feed-crlf-injection-http-response-splitting">Chapter 6 — Carriage Return / Line Feed (CRLF) Injection &amp; HTTP Response Splitting</h1>
+<p><strong>Definition:</strong> CRLF injection is about injection of newline characters into headers or HTTP responses leading to response splitting, header injection, or cache poisoning. Closely related to HTTP request smuggling/splitting.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Book examples</strong></p>
+<ul>
+<li>
+<p><strong>v.shopify.com response splitting</strong> — response splitting allowing header control; book walks through how to inject CRLF into user input that later becomes header content.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Twitter HTTP response splitting</strong> — another example showing cross-browser and server differences.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing patterns:</strong></p>
+<ol>
+<li>
+<p>Try inserting <code>%0d%0a</code> or <code>\r\n</code> into parameters used in header values.</p>
+</li>
+<li>
+<p>Inspect server responses for extra headers, cookie manipulation, or extra body segments that indicate splitting.</p>
+</li>
+<li>
+<p>Check caching layers and proxies (CDNs) for poisoning or cache key manipulation.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Fixes:</strong> Sanitize and validate header values; disallow newline characters in values that will be used in headers. Use framework helpers to set headers (instead of string concatenation).</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-7-cross-site-scripting-xss">Chapter 7 — Cross-Site Scripting (XSS)</h1>
+<p><strong>Definition:</strong> injection of attacker-supplied scripts (or scriptable content) into pages viewed by other users. The book covers <strong>reflected</strong>, <strong>stored</strong>, and <strong>DOM-based</strong> XSS, plus subtle contexts (attributes, CSS, JS contexts).</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>How it works:</strong> User input is placed into HTML without proper escaping; when victim visits the page the input executes as script in their origin, allowing cookie theft, CSRF bypass, session hijacking, DOM manipulation, redirecting, and more.</p>
+<p><strong>Notable examples from the book</strong></p>
+<ul>
+<li>
+<p><strong>Shopify Wholesale XSS</strong> and <strong>Shopify currency formatting XSS</strong> — shows how formatters and templating can create XSS contexts.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Yahoo! Mail stored XSS</strong> — a high-impact stored XSS example affecting mail content rendering.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Google Image Search / Tag Manager stored XSS</strong> — demonstrates how third-party components or templating can expose XSS vectors.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing patterns:</strong></p>
+<ul>
+<li>
+<p>Test common payloads in different contexts (<code>&lt;script&gt;</code>, <code>"&gt;&lt;img src=x onerror=...&gt;</code>, event handlers, <code>javascript:</code> URIs).</p>
+</li>
+<li>
+<p>Check unusual encodings and attributes (SVG, <code>data:</code> URIs, CSS contexts) and test DOM sinks (<code>innerHTML</code>, <code>eval</code>, <code>document.write</code>, <code>setAttribute('on*')</code>).</p>
+</li>
+<li>
+<p>Use Burp payload lists, DOM monitors, and browser consoles to test whether injected content executes.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Fixes / mitigations:</strong> output-encode per context (HTML, attribute, JS, CSS), adopt CSP, use secure templating libraries and framework helpers, sanitize user files and third-party content.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-8-template-injection">Chapter 8 — Template Injection</h1>
+<p><strong>Definition:</strong> injection of template syntax into server or client side template engines (e.g., Jinja2, AngularJS, Smarty). If the template engine evaluates expressions, attackers can run arbitrary code (server-side template injection = RCE risk), or at least manipulate rendered output (client-side template injections).</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Concrete examples</strong></p>
+<ul>
+<li>
+<p><strong>Uber AngularJS template injection</strong> — client-side Angular expression injection that lets attacker run expressions in page context.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Uber Flask/Jinja2 server-side template injection</strong> — demonstrates server-side template languages allowing code execution when user input is passed unescaped into templates.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Rails dynamic render</strong>, <strong>Unikrn Smarty injection</strong> — more examples showing multiple frameworks and how dangerous unsanitized template inputs become.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>PoC steps &amp; testing patterns:</strong></p>
+<ol>
+<li>
+<p>Identify fields that might be inserted into templates (e.g., <code>{{ user.name }}</code>, <code>{{ message }}</code>).</p>
+</li>
+<li>
+<p>Try test payloads appropriate to engine: Angular <code>{{constructor.constructor('alert(1)')()}}</code>-style probes for client templates; for Jinja attempt <code>{{ self.__init__.__globals__ }}</code> enumeration etc. (the book explains library-specific payloads).</p>
+</li>
+<li>
+<p>For server engines, aim to get the engine to evaluate function calls — this often leads to function invocation or file reads.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Fixes:</strong> avoid evaluating templates with user input, use strict escaping, or sandboxed template engines. Update or remove template features that evaluate expressions in untrusted input.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-9-sql-injection-sqli">Chapter 9 — SQL Injection (SQLi)</h1>
+<p><strong>Definition:</strong> injection of SQL into database queries via unsanitized input — allows data exfiltration, modification, or DB takeover. The book covers blind SQLi, error-based, and UNION-based techniques and countermeasures.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>Yahoo! Sports blind SQLi</strong> — demonstrates time-based and boolean blind techniques.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Uber Blind SQLi</strong> — how large infrastructure apps can leak data via blind techniques.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Drupal SQLi</strong> — a real vulnerability class example and remediation discussion.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing / exploitation patterns:</strong></p>
+<ul>
+<li>
+<p>Confirm injectable parameter using <code>' OR 1=1 --</code> style probes (careful on production).</p>
+</li>
+<li>
+<p>For blind SQLi use time delays (<code>SLEEP(5)</code>), boolean tests (<code>AND ASCII(SUBSTRING(...))&gt;x</code>) to exfiltrate data one bit/character at a time.</p>
+</li>
+<li>
+<p>Use UNION SELECT to retrieve data if error disclosure is available.</p>
+</li>
+<li>
+<p>Use automated tools (sqlmap) as an aid but manual exploitation often required for complex cases.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Remediation:</strong> parameterized queries/prepared statements, ORM safe APIs, least privilege DB accounts, input validation and output encoding for DB output.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-10-server-side-request-forgery-ssrf">Chapter 10 — Server-Side Request Forgery (SSRF)</h1>
+<p><strong>Definition:</strong> an attacker gets the server to make HTTP(S)/TCP requests to arbitrary internal/external hosts. SSRF is powerful because servers can access private metadata endpoints, internal services, and other resources not reachable from the attacker.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Key mechanics in the book:</strong></p>
+<ul>
+<li>
+<p>Demonstrates GET vs POST invocation (how to make server issue different request methods).</p>
+</li>
+<li>
+<p><strong>Blind SSRF</strong>: trigger a request where you only know whether it happened (e.g., by observing network callbacks).</p>
+</li>
+<li>
+<p>SSRF to internal AWS metadata (<code>169.254.169.254</code>) to steal credentials is covered (ESEA SSRF example).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Book case studies</strong></p>
+<ul>
+<li>
+<p><strong>ESEA SSRF</strong> — querying AWS metadata to obtain IAM credentials.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Google internal DNS SSRF</strong> — illustrating the power of internal DNS/internal resource access.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Internal port scanning using webhooks</strong> — clever technique to enumerate internal ports/services via SSRF callbacks.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing approach:</strong></p>
+<ol>
+<li>
+<p>Find endpoints that accept URLs (webhooks, remote image fetchers, importers).</p>
+</li>
+<li>
+<p>Use a collaborator/callback service (or your own endpoint) to capture server requests.</p>
+</li>
+<li>
+<p>Try internal IPs (<code>127.0.0.1</code>, <code>169.254.169.254</code>), IPv6 shorthand, DNS rebinding or poisoned hostnames to reach internal services.</p>
+</li>
+<li>
+<p>Use protocols besides HTTP (ftp://, file://) where permitted to access local files or other resources.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Mitigations:</strong> allowlist outgoing hosts, metadata service protections (IAM role policies, IMDSv2 in AWS), input validation for URLs, block or sanitize IP ranges pointing to internal addresses.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-11-xml-external-entity-xxe">Chapter 11 — XML External Entity (XXE)</h1>
+<p><strong>Definition:</strong> abusing XML parsers that resolve external entities (DTD) to read local files, SSRF to internal services, or cause DoS. XXE relies on parsers that process external DTDs by default.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>Read access to Google</strong> — the book shows how an XML upload/parse flow was abused to read unexpected resources.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Facebook XXE via Microsoft Word</strong> — demonstrates how documents containing external entity references can be used to trigger XXE.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Wikiloc XXE</strong> — another real report showing data or file access via XXE.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing patterns:</strong></p>
+<ol>
+<li>
+<p>Look for XML upload endpoints (file imports, document parsing, SOAP endpoints).</p>
+</li>
+<li>
+<p>Submit XML with <code>&lt;!DOCTYPE foo [ &lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt; ]&gt;</code> and reference <code>&amp;xxe;</code> to try to get parsed content returned.</p>
+</li>
+<li>
+<p>For blind contexts, have the parser perform an external entity reference to a remote controlled host to detect callbacks.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Fixes:</strong> disable external entity resolution in XML parsers, use safe parsing libraries, or use JSON/AJAX alternatives that don't evaluate external entities.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-12-remote-code-execution-rce">Chapter 12 — Remote Code Execution (RCE)</h1>
+<p><strong>Definition:</strong> attacker input ultimately leads to execution of shell commands or language-level functions on a server. RCE is a high-impact vulnerability. The chapter covers both function invocation and shell invocation vectors.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>Polyvore ImageMagick exploit</strong> — image processing libraries (ImageMagick) parsing attacker files, enabling command execution. The book explains how image processors can invoke system commands.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Algolia RCE on facebooksearch.algolia.com</strong> — demonstrates chained third-party service misconfigurations.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>RCE through SSH / misconfigured keys / infrastructure mistakes</strong> — how exposed credentials or weak config can lead to remote command execution.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing / exploitation approach:</strong></p>
+<ol>
+<li>
+<p>Identify input that is later passed to system tools (image processors, <code>exec()</code> wrappers, template engines that evaluate).</p>
+</li>
+<li>
+<p>Supply crafted payloads designed to break out of safe contexts (ImageMagick mvg or URL payloads), or provide input that causes parameter injection.</p>
+</li>
+<li>
+<p>After RCE, escalate by obtaining persistent shells, pivoting to internal network, or retrieving secrets. The book details escalation strategies.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Mitigation:</strong> avoid calling shell commands with untrusted input; run processors with limited permissions and sandboxes; validate and sanitize file types and content; apply least privilege to service accounts.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-13-memory-vulnerabilities">Chapter 13 — Memory Vulnerabilities</h1>
+<p><strong>Definition:</strong> classic program memory issues like buffer overflows, out-of-bounds reads/writes, integer overflows, and Heartbleed-style leaks. While less common in pure web app code (often in C/C++ libraries), many web services still rely on native modules that can be exploited.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>Buffer overflows, Heartbleed reference</strong> — general memory risk examples.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>PHP ftp_genlist() integer overflow</strong> — real vuln in PHP function enabling memory corruption.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Libcurl read out of bounds</strong> — vulnerabilities in widely used native libraries.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing / notes:</strong> memory bugs are usually found by fuzzing, code auditing, or monitoring crash reports. Many of these are high-impact but require specialized skills to exploit.</p>
+<p><strong>Mitigation:</strong> update native libs, use safe languages or sandboxing, apply compiler mitigations (ASLR, stack canaries), and run memory-safe coding practices.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-14-subdomain-takeover">Chapter 14 — Subdomain Takeover</h1>
+<p><strong>Definition:</strong> when DNS records point to an external service that is no longer provisioned (e.g., CNAME to unclaimed S3/Heroku/Zendesk), an attacker can claim that external resource and host content under the victim subdomain.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Book examples</strong></p>
+<ul>
+<li>
+<p><strong>Heroku / Ubiquiti example</strong> — how a service stopped existing but DNS still pointed to provider, enabling takeover; includes Heroku and other platforms takeover walk-throughs.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>scan.me pointing to Zendesk</strong> — a real example where the subdomain resolved to a vendor resource that the attacker could claim, enabling content serving under the victim domain.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing &amp; exploitation pattern:</strong></p>
+<ol>
+<li>
+<p>Crawl subdomains (via recon), check for CNAMEs pointing to cloud providers (S3, Heroku, Shopify, Zendesk).</p>
+</li>
+<li>
+<p>Verify whether the referenced resource exists/account is claimed; if not, attempt to claim it and serve content.</p>
+</li>
+<li>
+<p>Use the taken subdomain to host phishing pages or JS to exfiltrate cookies (if cookie scope allows).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Fix:</strong> remove stale DNS records; use provider checks to detect unlinked domains; set HSTS and secure cookie host restrictions where appropriate.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-15-race-conditions">Chapter 15 — Race Conditions</h1>
+<p><strong>Definition:</strong> concurrency bugs where two operations overlap in time and produce inconsistent or exploitable states (e.g., two payments causing double spend, file rename and read racing to create a file disclosure).</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>HackerOne payments race condition</strong> — example where concurrent operations allowed inconsistent monetary state changes (book details show how race was invoked during payments).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Invite multiple times / create resource race</strong> — the book shows tactics to induce races (parallel requests, thread pools) and how to prove them.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Exploitation &amp; testing:</strong></p>
+<ol>
+<li>
+<p>Identify endpoints that perform atomic operations (create, transfer, delete).</p>
+</li>
+<li>
+<p>Attempt to issue many concurrent requests (multithreaded curl, Burp Intruder) and see if invariants are violated.</p>
+</li>
+<li>
+<p>Use small timing adjustments and parallelism to increase success probability; record logs to prove the condition.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Mitigation:</strong> use DB-level transactions, row-level locking, idempotency tokens, and server-side atomic operations.</p>
+<hr />
+<h1 id="chapter-16-insecure-direct-object-references-idor-id-based-access-control">Chapter 16 — Insecure Direct Object References (IDOR / ID-based access control)</h1>
+<p><strong>Definition:</strong> authorization errors where object identifiers (IDs) are used directly in requests and access control checks rely on the client or are missing, allowing unauthorized access to objects by changing IDs.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>
+<p><strong>ACME customer info disclosure</strong> — IDOR allowing access to other customers’ data.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Binary.com privilege escalation</strong> and <strong>Moneybird app creation</strong> — show other IDOR patterns and how chained flows can lead to privilege escalation.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p><strong>Twitter Mopub API token theft</strong> — describes token theft via incorrect object access checks.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing approach:</strong></p>
+<ol>
+<li>
+<p>Identify predictable integer or string IDs in requests (<code>/user/1234</code>, <code>?id=</code>).</p>
+</li>
+<li>
+<p>Attempt to change to other values (increment or enumerate) and observe whether the server enforces authorization.</p>
+</li>
+<li>
+<p>Check whether server validates the authenticated user owns the referenced object or whether checks rely on client/state only.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ol>
+<p><strong>Fix:</strong> server-side authorization for all object accesses, use non-guessable IDs (GUIDs) plus authorization checks, and enforce least privilege.</p>
+<hr />
+<h1 id="chapter-17-oauth-vulnerabilities">Chapter 17 — OAuth Vulnerabilities</h1>
+<p><strong>Definition / focus:</strong> OAuth flows and token handling mistakes can cause token leakage, token misuse, or redirection misuse (open redirects + OAuth). Book ties earlier redirect and cross-site vulnerabilities to OAuth token theft.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Key learning points:</strong></p>
+<ul>
+<li>
+<p>Always validate redirect URIs in OAuth exchanges.</p>
+</li>
+<li>
+<p>Protect OAuth tokens from being leaked via open redirects, referers, or weak callback handling.</p>
+</li>
+<li>
+<p>Use best-practice flows (PKCE for public clients) and minimize token exposure on client.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-18-application-logic-and-configuration-vulnerabilities">Chapter 18 — Application Logic and Configuration Vulnerabilities</h1>
+<p><strong>Definition:</strong> vulnerabilities that are not formulaic (not classic injection issues) but arise from flawed logic, misconfigurations, or assumptions (price calculation errors, accounting logic, misconfigured storage ACLs). These are often high-value if found because they affect business logic.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Examples / book highlights</strong></p>
+<ul>
+<li>
+<p>The author emphasizes recon to find logic edges (features contacting other services, complex state transitions).</p>
+</li>
+<li>
+<p>He outlines various real reports where logic flaws allowed privilege elevation or data exposure.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<p><strong>Testing patterns:</strong> think like a user and the business — model state transitions, attempt unusual sequences (e.g., create → delete → re-create; change pricing then purchase), look for misapplied permissions.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="chapter-19-finding-your-own-bug-bounties-recon-tooling-methodology">Chapter 19 — Finding Your Own Bug Bounties (recon, tooling, methodology)</h1>
+<p><strong>Content:</strong> practical recon techniques (subdomain enumeration, Google dorking, Wayback caching), tooling recommendations (Burp, ZAP, Nmap, gobuster, gowitness), how to search HackerOne / Bugcrowd disclosures for ideas, and how to prioritize targets. The book gives an efficiency framework for triage and testing.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Key tips:</strong></p>
+<ul>
+<li>
+<p>Read disclosed reports for patterns and re-test similar endpoints on other targets.</p>
+</li>
+<li>
+<p>Keep an eye on third-party services a site uses — they widen your attack surface (Zendesk, S3, Algolia, etc.).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-20-vulnerability-reports-how-to-write-them">Chapter 20 — Vulnerability Reports (how to write them)</h1>
+<p><strong>Content:</strong> how to write high-quality reports: include clear reproduction steps, PoCs, impact justification, proof of exploitability, and remediation suggestions. The author shows how to build relationships with triage teams and improve acceptance.</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Practical checklist (book based):</strong></p>
+<ul>
+<li>
+<p>Short executive summary + detailed steps with request/response samples.</p>
+</li>
+<li>
+<p>Proof of impact (screenshots, logs, scripts).</p>
+</li>
+<li>
+<p>Suggested remediation and code hints.</p>
+</li>
+<li>
+<p>If vendor disagrees, politely expand PoC or show chained exploit demonstrating impact.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+<hr />
+<h1 id="appendices-tools-resources">Appendices — Tools &amp; Resources</h1>
+<p><strong>Appendix A (Tools):</strong> recommended tools (Burp Suite, ZAP, Nmap, gobuster, docker tools, scanner helpers).</p>
+<p>Real-World Bug Hunting</p>
+<p><strong>Appendix B (Resources):</strong> HackerOne Hacktivity, OWASP, Web Application Hacker’s Handbook, blogs, and video resources (Bugcrowd LevelUp, LiveOverflow). The book strongly encourages reading disclosed reports and following the community.</p>
+<p>Real-World Bug Hunting</p>
+<hr />
+<h1 id="quick-index-of-the-books-vulnerability-list-az-for-fast-reference">Quick index of the book’s vulnerability list (A→Z, for fast reference)</h1>
+<p>(These are the chapters / exploit classes the book covers — use this as your checklist when hunting.)</p>
+<ul>
+<li>
+<p>Open Redirect.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>HTTP Parameter Pollution (HPP).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Cross-Site Request Forgery (CSRF).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>HTML Injection &amp; Content Spoofing.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>CRLF / Response Splitting / HTTP Smuggling.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Cross-Site Scripting (XSS).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Template Injection (server &amp; client).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>SQL Injection (SQLi).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Server-Side Request Forgery (SSRF).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>XML External Entity (XXE).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Remote Code Execution (RCE).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Memory Vulnerabilities (buffer overflows, OOB).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Subdomain Takeover.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Race Conditions.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Insecure Direct Object References (IDOR).</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>OAuth vulnerabilities.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+<li>
+<p>Application logic/configuration bugs.</p>
+<p>Real-World Bug Hunting</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

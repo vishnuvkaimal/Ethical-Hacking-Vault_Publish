@@ -1,0 +1,1731 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free public ethical hacking knowledge base">
+      
+      
+        <meta name="author" content="Vishnu Vijai">
+      
+      
+      
+        <link rel="prev" href="../Ethical%20Hacking%20tools/">
+      
+      
+        <link rel="next" href="../../02-%20Domains%20and%20Roadmap%20-%20hacking%20theoretical%20basics/Roadmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Introduction to Ethical Hacking - Ethical Hacking Notes by Vishnu Vijai</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-ethical-hacking" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ethical Hacking Notes by Vishnu Vijai" class="md-header__button md-logo" aria-label="Ethical Hacking Notes by Vishnu Vijai" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ethical Hacking Notes by Vishnu Vijai
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Ethical Hacking
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ethical Hacking Notes by Vishnu Vijai" class="md-nav__button md-logo" aria-label="Ethical Hacking Notes by Vishnu Vijai" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ethical Hacking Notes by Vishnu Vijai
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00  Readme and orientation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    00  Readme and orientation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%20Readme%20and%20orientation/Self%20Note%20and%20tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self Note and tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01  Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01  Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ethical%20Hacking%20%26%20Cybersecurity%20%E2%80%93%20Standard%20Frameworks%20%26%20Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking & Cybersecurity – Standard Frameworks & Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ethical%20Hacking%20Job%20Roles%20and%20Career%20Paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking Job Roles and Career Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ethical%20Hacking%20tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethical Hacking tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Ethical Hacking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Ethical Hacking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ethical-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Ethical Hacking?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-ethical-hacking-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Ethical Hacking Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cia-triad-foundation-of-information-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CIA Triad – Foundation of Information Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CIA Triad – Foundation of Information Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Confidentiality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dad-triad-attackers-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The DAD Triad – Attacker’s Perspective
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The DAD Triad – Attacker’s Perspective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-alteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Alteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-denial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Denial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Hackers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Hackers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-white-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. White Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-black-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Black Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gray-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gray Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-script-kiddies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Script Kiddies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hacktivists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Hacktivists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-ethical-hacking-security-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Ethical Hacking (Security Domains)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Ethical Hacking (Security Domains)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-application-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Application Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-network-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Network Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-system-server-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. System / Server Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wireless-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Wireless Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cloud-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cloud Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mobile-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mobile Application Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-malware-analysis-reverse-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Malware Analysis &amp; Reverse Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethical-hacking-vs-cybersecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ethical Hacking vs Cybersecurity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legal-and-ethical-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal and Ethical Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02  Domains and Roadmap   hacking theoretical basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02  Domains and Roadmap   hacking theoretical basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%20Domains%20and%20Roadmap%20-%20hacking%20theoretical%20basics/Roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05  References n materials and book summaries
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05  References n materials and book summaries
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-%20References%20n%20materials%20and%20book%20summaries/Real-World%20Bug%20Hunting-%20A%20Field%20Guide%20to%20Web%20Hacking%20by%20Peter%20Yaworski%20Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Real World Bug Hunting  A Field Guide to Web Hacking by Peter Yaworski Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ethical-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Ethical Hacking?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-ethical-hacking-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Ethical Hacking Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cia-triad-foundation-of-information-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CIA Triad – Foundation of Information Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CIA Triad – Foundation of Information Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Confidentiality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dad-triad-attackers-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The DAD Triad – Attacker’s Perspective
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The DAD Triad – Attacker’s Perspective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-alteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Alteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-denial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Denial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Hackers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Hackers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-white-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. White Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-black-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Black Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gray-hat-hackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gray Hat Hackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-script-kiddies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Script Kiddies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hacktivists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Hacktivists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-ethical-hacking-security-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Ethical Hacking (Security Domains)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Ethical Hacking (Security Domains)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-application-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Application Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-network-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Network Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-system-server-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. System / Server Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wireless-hacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Wireless Hacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cloud-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cloud Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mobile-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mobile Application Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-malware-analysis-reverse-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Malware Analysis &amp; Reverse Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethical-hacking-vs-cybersecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ethical Hacking vs Cybersecurity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legal-and-ethical-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal and Ethical Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Introduction to Ethical Hacking</h1>
+
+<h2 id="what-is-ethical-hacking">What is Ethical Hacking?</h2>
+<p>Hacking refers to unauthorized access of systems, be it read , modify or delete. Ethical hacking is the authorized testing of hacking real world systems.
+<strong>Ethical hacking</strong> is the authorized practice of identifying, analyzing, and responsibly reporting security weaknesses in systems, networks, applications, and infrastructures.</p>
+<p>The goal is <strong>not to break systems for personal gain</strong>, but to:</p>
+<ul>
+<li>
+<p>Understand how real attackers think and operate</p>
+</li>
+<li>
+<p>Discover weaknesses <em>before</em> malicious actors do</p>
+</li>
+<li>
+<p>Help organizations improve their security posture</p>
+</li>
+</ul>
+<p>Ethical hacking is performed <strong>with permission</strong>, <strong>within legal boundaries</strong>, and <strong>with clear scope and responsibility</strong>.</p>
+<hr />
+<h2 id="why-ethical-hacking-exists">Why Ethical Hacking Exists</h2>
+<p>Modern systems are complex. No software, network, or organization is perfectly secure.</p>
+<p>Ethical hacking exists because:</p>
+<ul>
+<li>
+<p>Defensive security alone is insufficient</p>
+</li>
+<li>
+<p>Real attackers constantly evolve</p>
+</li>
+<li>
+<p>Security must be tested under real-world conditions</p>
+</li>
+</ul>
+<p>Ethical hackers simulate real attacks to <strong>measure actual risk</strong>, not theoretical safety.</p>
+<hr />
+<h2 id="the-cia-triad-foundation-of-information-security">The CIA Triad – Foundation of Information Security</h2>
+<p>All cybersecurity concepts ultimately revolve around the <strong>CIA Triad</strong>, which defines what security is meant to protect.</p>
+<h3 id="1-confidentiality">1. Confidentiality</h3>
+<ul>
+<li>
+<p>Ensuring information is accessible <strong>only to authorized entities</strong></p>
+</li>
+<li>
+<p>Examples: encryption, access controls, authentication</p>
+</li>
+</ul>
+<h3 id="2-integrity">2. Integrity</h3>
+<ul>
+<li>
+<p>Ensuring data is <strong>accurate and unaltered</strong></p>
+</li>
+<li>
+<p>Examples: hashing, digital signatures, checksums</p>
+</li>
+</ul>
+<h3 id="3-availability">3. Availability</h3>
+<ul>
+<li>
+<p>Ensuring systems and data are <strong>accessible when needed</strong></p>
+</li>
+<li>
+<p>Examples: redundancy, backups, DDoS protection</p>
+</li>
+</ul>
+<blockquote>
+<p>If a system fails at <strong>any one</strong> of these three, security is compromised.</p>
+</blockquote>
+<hr />
+<h2 id="the-dad-triad-attackers-perspective">The DAD Triad – Attacker’s Perspective</h2>
+<p>From an attacker’s viewpoint, security is broken by violating CIA. This is expressed as the <strong>DAD Triad</strong>.</p>
+<h3 id="1-disclosure">1. Disclosure</h3>
+<ul>
+<li>
+<p>Exposing confidential information</p>
+</li>
+<li>
+<p>Examples: data breaches, leaks, unauthorized access</p>
+</li>
+</ul>
+<h3 id="2-alteration">2. Alteration</h3>
+<ul>
+<li>
+<p>Modifying data or system behavior</p>
+</li>
+<li>
+<p>Examples: defacement, tampering, privilege abuse</p>
+</li>
+</ul>
+<h3 id="3-denial">3. Denial</h3>
+<ul>
+<li>
+<p>Preventing legitimate access to systems or services</p>
+</li>
+<li>
+<p>Examples: DoS/DDoS attacks, resource exhaustion</p>
+</li>
+</ul>
+<blockquote>
+<p>Ethical hackers think in <strong>CIA</strong>, but attack in <strong>DAD</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="types-of-hackers">Types of Hackers</h2>
+<p>Hackers are classified based on <strong>intent, authorization, and legality</strong>.</p>
+<h3 id="1-white-hat-hackers">1. White Hat Hackers</h3>
+<ul>
+<li>
+<p>Authorized security professionals</p>
+</li>
+<li>
+<p>Work within legal and ethical boundaries</p>
+</li>
+<li>
+<p>Examples: penetration testers, security researchers</p>
+</li>
+</ul>
+<h3 id="2-black-hat-hackers">2. Black Hat Hackers</h3>
+<ul>
+<li>
+<p>Unauthorized and malicious actors</p>
+</li>
+<li>
+<p>Motivated by profit, power, or ideology</p>
+</li>
+<li>
+<p>Examples: cybercriminals, ransomware groups</p>
+</li>
+</ul>
+<h3 id="3-gray-hat-hackers">3. Gray Hat Hackers</h3>
+<ul>
+<li>
+<p>Operate between white and black hats</p>
+</li>
+<li>
+<p>May break rules but not always for malicious intent</p>
+</li>
+<li>
+<p>Often controversial and legally risky</p>
+</li>
+</ul>
+<h3 id="4-script-kiddies">4. Script Kiddies</h3>
+<ul>
+<li>
+<p>Limited technical understanding</p>
+</li>
+<li>
+<p>Rely on pre-built tools and scripts</p>
+</li>
+</ul>
+<h3 id="5-hacktivists">5. Hacktivists</h3>
+<ul>
+<li>
+<p>Politically or ideologically motivated</p>
+</li>
+<li>
+<p>Target organizations to promote causes</p>
+</li>
+</ul>
+<hr />
+<h2 id="types-of-ethical-hacking-security-domains">Types of Ethical Hacking (Security Domains)</h2>
+<p>Ethical hacking is not a single activity. It spans multiple <strong>domains</strong>, each focusing on a different attack surface.</p>
+<h3 id="1-web-application-hacking">1. Web Application Hacking</h3>
+<ul>
+<li>
+<p>Targets websites, APIs, and web services</p>
+</li>
+<li>
+<p>Common issues:</p>
+<ul>
+<li>
+<p>XSS (Cross-Site Scripting)</p>
+</li>
+<li>
+<p>SQL Injection</p>
+</li>
+<li>
+<p>CSRF (Cross-Site Request Forgery)</p>
+</li>
+<li>
+<p>Authentication and authorization flaws</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-network-hacking">2. Network Hacking</h3>
+<ul>
+<li>
+<p>Targets internal and external networks</p>
+</li>
+<li>
+<p>Focuses on:</p>
+<ul>
+<li>
+<p>Open ports and services</p>
+</li>
+<li>
+<p>Misconfigurations</p>
+</li>
+<li>
+<p>Network protocols</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-system-server-hacking">3. System / Server Hacking</h3>
+<ul>
+<li>
+<p>Targets operating systems and servers</p>
+</li>
+<li>
+<p>Includes:</p>
+<ul>
+<li>
+<p>Privilege escalation</p>
+</li>
+<li>
+<p>Misconfigured services</p>
+</li>
+<li>
+<p>Weak credentials</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-wireless-hacking">4. Wireless Hacking</h3>
+<ul>
+<li>
+<p>Targets Wi-Fi and wireless protocols</p>
+</li>
+<li>
+<p>Includes:</p>
+<ul>
+<li>
+<p>Weak encryption</p>
+</li>
+<li>
+<p>Rogue access points</p>
+</li>
+<li>
+<p>WPS vulnerabilities</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-cloud-security-testing">5. Cloud Security Testing</h3>
+<ul>
+<li>
+<p>Targets cloud infrastructure and services</p>
+</li>
+<li>
+<p>Includes:</p>
+<ul>
+<li>
+<p>IAM misconfigurations</p>
+</li>
+<li>
+<p>Exposed storage</p>
+</li>
+<li>
+<p>Insecure APIs</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-mobile-application-security">6. Mobile Application Security</h3>
+<ul>
+<li>
+<p>Targets Android and iOS apps</p>
+</li>
+<li>
+<p>Includes:</p>
+<ul>
+<li>
+<p>Insecure storage</p>
+</li>
+<li>
+<p>API abuse</p>
+</li>
+<li>
+<p>Reverse engineering</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-malware-analysis-reverse-engineering">7. Malware Analysis &amp; Reverse Engineering</h3>
+<ul>
+<li>
+<p>Focuses on understanding malicious software</p>
+</li>
+<li>
+<p>Includes:</p>
+<ul>
+<li>
+<p>Binary analysis</p>
+</li>
+<li>
+<p>Debugging</p>
+</li>
+<li>
+<p>Behavior analysis</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="ethical-hacking-vs-cybersecurity">Ethical Hacking vs Cybersecurity</h2>
+<p>Ethical hacking is a <strong>subset</strong> of cybersecurity.</p>
+<ul>
+<li>
+<p><strong>Cybersecurity</strong> is broad (policy, defense, governance, monitoring)</p>
+</li>
+<li>
+<p><strong>Ethical hacking</strong> is offensive and testing-oriented</p>
+</li>
+</ul>
+<p>Both are essential and complementary.</p>
+<hr />
+<h2 id="legal-and-ethical-boundaries">Legal and Ethical Boundaries</h2>
+<p>Ethical hacking is defined as much by <strong>what you do not do</strong> as by what you do.</p>
+<p>Key principles:</p>
+<ul>
+<li>
+<p>Always have <strong>explicit permission</strong></p>
+</li>
+<li>
+<p>Stay within <strong>defined scope</strong></p>
+</li>
+<li>
+<p>Do not access unnecessary data</p>
+</li>
+<li>
+<p>Report findings responsibly</p>
+</li>
+</ul>
+<p>Without authorization, hacking is illegal — regardless of skill or intent.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
