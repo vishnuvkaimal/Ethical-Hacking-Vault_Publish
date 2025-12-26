@@ -1,7 +1,3 @@
-\# Ethical Hacking Notes by Vishnu Vijai
-
-
-
 Welcome to my public knowledge base on ethical hacking and cybersecurity.
 
 
